@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube View Filter</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .stats {
+      background-color: #f5f5f5;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .threshold-control {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .slider-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    input[type="range"] {
+      flex-grow: 1;
+    }
+    button {
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3367d6;
+    }
+    .preset-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 5px;
+    }
+    .preset-buttons button {
+      flex: 1;
+      font-size: 12px;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>YouTube View Filter</h2>
+    
+    <div class="stats">
+      <p>Videos hidden: <span id="removed-count">0</span></p>
+    </div>
+    
+    <div class="threshold-control">
+      <label for="threshold">View Threshold: <span id="threshold-value">1,000</span></label>
+      <div class="slider-container">
+        <input type="range" id="threshold" min="0" max="5" step="1" value="1">
+      </div>
+      <div class="preset-buttons">
+        <button data-value="100">100</button>
+        <button data-value="1000">1K</button>
+        <button data-value="10000">10K</button>
+        <button data-value="100000">100K</button>
+        <button data-value="1000000">1M</button>
+      </div>
+    </div>
+    
+    <button id="apply">Apply Changes</button>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
