@@ -1,1 +1,26 @@
 .aider*
+# Node modules (if any)
+node_modules/
+
+# Log files
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# Build directories
+dist/
+build/
+
+# Chrome extension packaging
+*.crx
+*.pem
+
+# Archives
+*.zip
+*.rar
